@@ -22,6 +22,7 @@ public class Countdown extends Actor
     
     public void act() 
     {
+        if (count && !timeUp) {
         if (System.currentTimeMillis() - lastCurrentSecond >= 1000) {
             lastCurrentSecond += 1000;
             seconds--;
@@ -32,6 +33,7 @@ public class Countdown extends Actor
             ((MyWorld)getWorld()).musik.stop();
             Greenfoot.setWorld(new MyWorld2());
         }
+       }
     } 
     
     private void drawTime() {

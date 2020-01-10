@@ -16,18 +16,17 @@ public class MyWorld2 extends World
         super(600, 400, 1);
         Greenfoot.setSpeed(50);
         setBackground("background.png");
-        if (Greenfoot.getKey().equals("space")){
-            spawnActor();
-        }
-    }
-    
-    public void spawnActor()
-    {
-        addObject(new Spieler(), 300, 360);
-        addObject(new Gegner(), 50, 50);
-        addObject(new Countdown(10), 0, 0);
     }
 
+    public void act()
+    {
+        if (Greenfoot.isKeyDown("space")){
+            
+            addObject(new Spieler(), 300, 360);
+            addObject(new Gegner(), 50, 50);
+            addObject(new Countdown(10), 0, 0);
+        }
+    }
     public void MusikStart()
     {
         musik.play(); 
