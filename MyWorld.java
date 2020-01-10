@@ -12,7 +12,7 @@ public class MyWorld extends World
         addObject(new Spieler(), 300, 360);
         addObject(new Gegner(), 50, 50);
         //addObject(new Countdown(96), 0, 0);
-        addObject(new Countdown(3), 0, 0);
+        addObject(new Countdown(10), 0, 0);
     }
 
     public void MusikStart()

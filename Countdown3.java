@@ -29,7 +29,7 @@ public class Countdown3 extends Actor
         }
         if (seconds == 0) {
             timeUp = true;
-            getWorld().showText("Du hast gewonnen!", 300, 200);
+            getWorld().showText("Du bist entkommen!", 300, 200);
             ((MyWorld3)getWorld()).musik.stop();
             Greenfoot.stop();
         }

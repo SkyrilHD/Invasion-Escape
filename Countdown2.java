@@ -30,7 +30,7 @@ public class Countdown2 extends Actor
         if (seconds == 0) {
             timeUp = true;
             ((MyWorld2)getWorld()).musik.stop();
-            Greenfoot.setWorld(new MyWorld3());
+            Greenfoot.setWorld(new Pause2());
         }
     } 
     

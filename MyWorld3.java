@@ -14,11 +14,11 @@ public class MyWorld3 extends World
     {    
         super(600, 400, 1);
         Greenfoot.setSpeed(50);
-        setBackground("background.png");
+        setBackground("Webp.net-resizeimage.png");
         addObject(new Spieler(), 300, 360);
-        addObject(new Gegner(), 50, 50);
+        addObject(new Gegner(), 50, 40);
         //addObject(new Countdown(246), 0, 0);
-        addObject(new Countdown(10), 0, 0);
+        addObject(new Countdown3(10), 0, 0);
     }
 
     public void MusikStart()
