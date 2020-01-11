@@ -37,6 +37,7 @@ public class Countdown extends Actor
             timeUp = true;
             getWorld().showText("Du bist entkommen!", 300, 200);
             ((MyWorld3)getWorld()).musik.stop();
+            Greenfoot.playSound("VictorySound.mp3");
             Greenfoot.stop();
         }
        }

@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Countdown
+comment1.params=startingTime
+comment1.target=Countdown(int)
+comment2.params=
+comment2.target=void\ act()
+comment3.params=
+comment3.target=void\ drawTime()
+comment4.params=
+comment4.target=boolean\ timeUp()
+comment5.params=
+comment5.target=void\ startClock()
+numComments=6

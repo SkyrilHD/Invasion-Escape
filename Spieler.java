@@ -16,16 +16,23 @@ public class Spieler extends Actor
             setImage("Car_R.png");
         }
         if (this.getOneIntersectingObject(Kugel.class) != null){
-            if (MyWorld.class.isInstance(getWorld())) ((MyWorld)getWorld()).musik.stop();
-            if (MyWorld2.class.isInstance(getWorld())) ((MyWorld2)getWorld()).musik.stop();
-            if (MyWorld3.class.isInstance(getWorld())) ((MyWorld3)getWorld()).musik.stop();
-            Greenfoot.playSound("GameOverSound.mp3");
-            getWorld().addObject(new GameOver(), 300, 200);
             getWorld().removeObject(new Kugel(0));
             getWorld().removeObject(new Kugel(1));
             getWorld().addObject(new Explosion(), this.getX(), this.getY());
-            getWorld().removeObject(this);
-            Greenfoot.stop();
-        }
+            GE();
+        } else if (getX() == 0) 
+         {
+            GE();
+         }
+    }
+    public void GE()
+    {
+       if (MyWorld.class.isInstance(getWorld())) ((MyWorld)getWorld()).musik.stop();
+       if (MyWorld2.class.isInstance(getWorld())) ((MyWorld2)getWorld()).musik.stop();
+       if (MyWorld3.class.isInstance(getWorld())) ((MyWorld3)getWorld()).musik.stop();
+       Greenfoot.playSound("GameOverSound.mp3");
+       getWorld().addObject(new GameOver(), 300, 200);
+       getWorld().removeObject(this);
+       Greenfoot.stop();  
     }
 }

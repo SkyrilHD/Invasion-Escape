@@ -11,6 +11,6 @@ public class MyWorld extends World
         setBackground("Level1.png");
         addObject(new Spieler(), 300, 360);
         addObject(new Gegner(), 50, 50);
-        addObject(new Countdown(10), 0, 0);
+        addObject(new Countdown(96), 0, 0);
     }
 }

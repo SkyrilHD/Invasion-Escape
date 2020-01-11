@@ -12,6 +12,6 @@ public class MyWorld2 extends World
         addObject(new Spieler(), 300, 370);
         addObject(new Gegner(), 200, 40);
         addObject(new Gegner(), 400, 40);
-        addObject(new Countdown(10), 0, 0);
+        addObject(new Countdown(196), 0, 0);
     }
 }
