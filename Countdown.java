@@ -6,20 +6,15 @@ public class Countdown extends Actor
     private int seconds = 180;
     
     private long lastCurrentSecond;
-    private long timeSaved = 0;
     
     private boolean timeUp = false;
     private boolean count = false;
-    private boolean countDown = true;
-    
-    private String text;
     
     public Countdown(int startingTime) {
         this.startingTime = startingTime;
         seconds = startingTime;
         this.startClock();
     }
-    
     public void act() 
     {
         if (count && !timeUp) {
@@ -28,14 +23,24 @@ public class Countdown extends Actor
             seconds--;
             drawTime();
         }
-        if (seconds == 0) {
+        if (seconds == 0 && MyWorld.class.isInstance(getWorld())) {
             timeUp = true;
             ((MyWorld)getWorld()).musik.stop();
             Greenfoot.setWorld(new Pause1());
         }
+        if (seconds == 0 && MyWorld2.class.isInstance(getWorld())) {
+            timeUp = true;
+            ((MyWorld2)getWorld()).musik.stop();
+            Greenfoot.setWorld(new Pause2());
+        }
+        if (seconds == 0 && MyWorld3.class.isInstance(getWorld())) {
+            timeUp = true;
+            getWorld().showText("Du bist entkommen!", 300, 200);
+            ((MyWorld3)getWorld()).musik.stop();
+            Greenfoot.stop();
+        }
        }
     } 
-    
     private void drawTime() {
         int min = (int) (seconds / 60);
         int sec = seconds % 60;
@@ -48,23 +53,11 @@ public class Countdown extends Actor
         }
         getWorld().showText("Verbleibende Zeit: " + remainingTime, 480, 385);
     }
-    
     public boolean timeUp() {
         return timeUp;
     }
-    
     public void startClock() {
-        lastCurrentSecond = System.currentTimeMillis() - timeSaved;
+        lastCurrentSecond = System.currentTimeMillis();
         count = true;
-    }
-    
-    public void stopClock() {
-        timeSaved = System.currentTimeMillis() - lastCurrentSecond;
-        count = false;
-    }
-    
-    public void resetClock() {
-        seconds = startingTime;
-        timeUp = false;
     }
 }

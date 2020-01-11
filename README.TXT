@@ -4,9 +4,9 @@ Tell the reader (someone who does not know anything about this project)
 all he/she needs to know. The comments should usually include at least:
 ------------------------------------------------------------------------
 
-PROJECT TITLE: DANK BOI
-PURPOSE OF PROJECT: CUZ I'M COOL
+PROJECT TITLE: Invasion Escape
+PURPOSE OF PROJECT: School project
 VERSION or DATE: v69.420
-HOW TO START THIS PROJECT: CLICK RUN
-AUTHORS: YOUR MOM
-USER INSTRUCTIONS:
+HOW TO START THIS PROJECT: open the file
+AUTHORS: SkyrilHD
+USER INSTRUCTIONS: Press "A" or "D" to control the car and escape from wasps to win the game.
