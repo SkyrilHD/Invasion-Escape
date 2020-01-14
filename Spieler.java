@@ -27,12 +27,12 @@ public class Spieler extends Actor
     }
     public void GE()
     {
-       if (MyWorld.class.isInstance(getWorld())) ((MyWorld)getWorld()).musik.stop();
-       if (MyWorld2.class.isInstance(getWorld())) ((MyWorld2)getWorld()).musik.stop();
-       if (MyWorld3.class.isInstance(getWorld())) ((MyWorld3)getWorld()).musik.stop();
-       Greenfoot.playSound("GameOverSound.mp3");
-       getWorld().addObject(new GameOver(), 300, 200);
-       getWorld().removeObject(this);
-       Greenfoot.stop();  
+        if (MyWorld.class.isInstance(getWorld())) ((MyWorld)getWorld()).musik.stop();
+        if (MyWorld2.class.isInstance(getWorld())) ((MyWorld2)getWorld()).musik.stop();
+        if (MyWorld3.class.isInstance(getWorld())) ((MyWorld3)getWorld()).musik.stop();
+        Greenfoot.playSound("GameOverSound.mp3");
+        getWorld().addObject(new GameOver(), 300, 200);
+        getWorld().addObject(new Retry(), 300, 280);
+        getWorld().removeObject(this);
     }
 }

@@ -1,26 +1,39 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;
 
-/**
- * Write a description of class Spieler here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class Spieler extends Actor
 {
-    /**
-     * Act - do whatever the Spieler wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
     public void act() 
     {
+        if (MyWorld.class.isInstance(getWorld())) ((MyWorld)getWorld()).musik.play();
+        if (MyWorld2.class.isInstance(getWorld())) ((MyWorld2)getWorld()).musik.play();
+        if (MyWorld3.class.isInstance(getWorld())) ((MyWorld3)getWorld()).musik.play();
         if (Greenfoot.isKeyDown("A")){
-            this.setLocation(this.getX()-4, this.getY());
-            Greenfoot.setImage(bee.png);
+            setLocation(this.getX()-4, this.getY());
+            setImage("Car_L.png");
         }
         if (Greenfoot.isKeyDown("D")){
-            this.setLocation(this.getX()+4, this.getY());
+            setLocation(this.getX()+4, this.getY());
+            setImage("Car_R.png");
         }
-    } 
-    
+        if (this.getOneIntersectingObject(Kugel.class) != null){
+            getWorld().removeObject(new Kugel(0));
+            getWorld().removeObject(new Kugel(1));
+            getWorld().addObject(new Explosion(), this.getX(), this.getY());
+            getWorld().removeObject(new Countdown());
+            GE();
+        } else if (getX() == 0) 
+         {
+            GE();
+         }
+    }
+    public void GE()
+    {
+        if (MyWorld.class.isInstance(getWorld())) ((MyWorld)getWorld()).musik.stop();
+        if (MyWorld2.class.isInstance(getWorld())) ((MyWorld2)getWorld()).musik.stop();
+        if (MyWorld3.class.isInstance(getWorld())) ((MyWorld3)getWorld()).musik.stop();
+        Greenfoot.playSound("GameOverSound.mp3");
+        getWorld().addObject(new GameOver(), 300, 200);
+        getWorld().addObject(new Retry(), 300, 280);
+        getWorld().removeObject(this);
+    }
 }

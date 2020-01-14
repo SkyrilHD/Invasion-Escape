@@ -1,13 +1,15 @@
 #BlueJ class context
 comment0.target=Countdown
-comment1.params=startingTime
-comment1.target=Countdown(int)
-comment2.params=
-comment2.target=void\ act()
+comment1.params=
+comment1.target=Countdown()
+comment2.params=startingTime
+comment2.target=Countdown(int)
 comment3.params=
-comment3.target=void\ drawTime()
+comment3.target=void\ act()
 comment4.params=
-comment4.target=boolean\ timeUp()
+comment4.target=void\ drawTime()
 comment5.params=
-comment5.target=void\ startClock()
-numComments=6
+comment5.target=boolean\ timeUp()
+comment6.params=
+comment6.target=void\ startClock()
+numComments=7

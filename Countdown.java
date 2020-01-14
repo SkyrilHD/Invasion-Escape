@@ -10,6 +10,8 @@ public class Countdown extends Actor
     private boolean timeUp = false;
     private boolean count = false;
     
+    public Countdown() {
+    }
     public Countdown(int startingTime) {
         this.startingTime = startingTime;
         seconds = startingTime;
@@ -17,7 +19,7 @@ public class Countdown extends Actor
     }
     public void act() 
     {
-        if (count && !timeUp) {
+        if (count && !timeUp && (getWorld().getObjects(Spieler.class).size() != 0)) {
         if (System.currentTimeMillis() - lastCurrentSecond >= 1000) {
             lastCurrentSecond += 1000;
             seconds--;
@@ -52,7 +54,7 @@ public class Countdown extends Actor
         else {
             remainingTime = min + ":" + sec;
         }
-        getWorld().showText("Verbleibende Zeit: " + remainingTime, 480, 385);
+        getWorld().showText("Verbleibende Zeit: " + remainingTime, 470, 385);
     }
     public boolean timeUp() {
         return timeUp;
