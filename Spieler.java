@@ -2,8 +2,13 @@ import greenfoot.*;
 
 public class Spieler extends Actor
 {
+    int cooldown = 0;
+    
     public void act() 
     {
+        if(cooldown > 0) {
+            cooldown -= 1;
+        }
         if (MyWorld.class.isInstance(getWorld())) ((MyWorld)getWorld()).musik.play();
         if (MyWorld2.class.isInstance(getWorld())) ((MyWorld2)getWorld()).musik.play();
         if (MyWorld3.class.isInstance(getWorld())) ((MyWorld3)getWorld()).musik.play();
@@ -29,6 +34,10 @@ public class Spieler extends Actor
             getWorld().removeObject(new Kugel(1));
             getWorld().addObject(new Explosion(), this.getX(), this.getY());
             GE();
+        }
+        if (Greenfoot.isKeyDown("space") && (cooldown == 0)){
+            getWorld().addObject(new Bullet(), this.getX(), this.getY());
+            cooldown = 40;
         }
     }
     public void GE()
