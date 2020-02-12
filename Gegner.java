@@ -10,10 +10,8 @@ public class Gegner extends Actor
     public void act() 
     {
         move(2);
-        if (MyWorld.class.isInstance(getWorld()))
-        spawnE();
-        if (MyWorld2.class.isInstance(getWorld()) || MyWorld3.class.isInstance(getWorld()))
-        spawnMH();
+        if (MyWorld.class.isInstance(getWorld()))   spawnE();
+        if (MyWorld2.class.isInstance(getWorld()) || MyWorld3.class.isInstance(getWorld()))   spawnMH();
         if(this.isAtEdge()){
             getWorld().addObject(new Gegner(), 0, this.getY());
             getWorld().removeObject(this);
