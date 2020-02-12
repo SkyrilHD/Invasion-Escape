@@ -15,15 +15,21 @@ public class Spieler extends Actor
             setLocation(this.getX()+4, this.getY());
             setImage("Car_R.png");
         }
+        if (this.getX() <= 90) {
+            getWorld().addObject(new CountdownCorner(), 0, 0);
+        }
+        if (this.getX() >= 90) {
+            if (getWorld().getObjects(CountdownCorner.class).size() != 0) {
+                getWorld().getObjects(CountdownCorner.class).get(0).stopClock();
+                getWorld().removeObjects(getWorld().getObjects(CountdownCorner.class));
+            }
+        }
         if (this.getOneIntersectingObject(Kugel.class) != null){
             getWorld().removeObject(new Kugel(0));
             getWorld().removeObject(new Kugel(1));
             getWorld().addObject(new Explosion(), this.getX(), this.getY());
             GE();
-        } else if (getX() == 0) 
-         {
-            GE();
-         }
+        }
     }
     public void GE()
     {

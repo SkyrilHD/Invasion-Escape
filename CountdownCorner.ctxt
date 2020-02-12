@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=CountdownCorner
+comment1.params=
+comment1.target=CountdownCorner()
+comment2.params=
+comment2.target=void\ act()
+comment3.params=
+comment3.target=void\ startClock()
+comment4.params=
+comment4.target=void\ stopClock()
+numComments=5
